@@ -1,0 +1,2 @@
+SpoutGUI-Bukkitmanager-Addon
+============================
