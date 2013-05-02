@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.efreak.bukkitmanager.addon.spoutgui</groupId>
+  <artifactId>spoutgui</artifactId>
+  <version>1.0</version>
+  
+  <name>SpoutGUI Addon</name>
+  <url>http://dev.bukkit.org/server-mods/bukkitmanager/</url>
+  
+  <developers>
+    <developer>
+      <id>e-freak</id>
+      <name>Max Jöhnk (e-freak)</name>
+      <email>maxjoehnk@gmail.com</email>
+      <roles>
+        <role>Project Manager</role>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <scm>
+    <developerConnection>scm:git:git@github.com:e-freak/SpoutGUI-Bukkitmanager-Addon.git</developerConnection>
+    <connection>scm:git:git://github.com/e-freak/SpoutGUI-Bukkitmanager-Addon.git</connection>
+    <url>https://github.com/e-freak/SpoutGUI-Bukkitmanager-Addon/tree/master</url>
+  </scm>
+  
+  <licenses>
+    <license>
+      <name>The GNU General Public License Version 3</name>
+      <url>http://www.gnu.org/licenses/gpl-3.0.txt</url>
+    </license>
+  </licenses>
+  
+  <ciManagement>
+    <system>jenkins</system>
+    <url>http://98.164.246.75:8080/</url>
+  </ciManagement>
+  
+  <packaging>jar</packaging>
+  
+  <repositories>
+    <repository>
+      <id>spout-repo</id>
+      <url>http://repo.spout.org</url>
+    </repository>
+  </repositories>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.efreak.bukkitmanager</groupId>
+      <artifactId>bukkitmanager</artifactId>
+      <version>Beta 1.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.getspout</groupId>
+      <artifactId>spoutplugin</artifactId>
+      <version>1.5.1-R0.1-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+  </build>
+</project>

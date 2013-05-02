@@ -1,0 +1,6 @@
+name: SpoutGUIAddon
+main: org.efreak.bukkitmanager.addon.spoutgui.SpoutGUIAddon
+version: 1.0
+author: e-freak
+prefix: BukkitmanagerSpoutGUI
+depend: [Bukkitmanager]
