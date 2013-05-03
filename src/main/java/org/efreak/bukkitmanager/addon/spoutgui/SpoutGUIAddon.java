@@ -1,10 +1,8 @@
 package org.efreak.bukkitmanager.addon.spoutgui;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
-import org.efreak.bukkitmanager.addon.spoutgui.screens.Screen;
 import org.efreak.bukkitmanager.addons.BukkitmanagerAddon;
 import org.efreak.bukkitmanager.language.Language;
 import org.efreak.bukkitmanager.util.FileFilter;
@@ -12,7 +10,7 @@ import org.efreak.bukkitmanager.util.FileHelper;
 
 public class SpoutGUIAddon extends BukkitmanagerAddon {
 
-	private static List<Screen> screens;
+	private static HashMap<String, Screen> screens;
 	private static File spoutDir;
 	
 	@Override
@@ -32,7 +30,7 @@ public class SpoutGUIAddon extends BukkitmanagerAddon {
 		Language.addKey("en", "Spout.Screens.Loading", "Loading Custom Spout Screens...");
 		Language.addKey("en", "Spout.Screens.Loaded", "%count% Spout Screens loaded!");
 		
-		screens = new ArrayList<Screen>();
+		screens = new HashMap<String, Screen>();
 		spoutDir = new File(FileHelper.getPluginDir(), "spout");
 		spoutDir.mkdirs();
 		File[] files;
@@ -40,8 +38,15 @@ public class SpoutGUIAddon extends BukkitmanagerAddon {
 			io.sendConsole(io.translate("Spout.Screens.Loading"));
 			files = spoutDir.listFiles(new FileFilter(".screen"));
 			int i;
-			for (i = 0; i < files.length; i++) screens.add(new Screen(files[i]));
+			for (i = 0; i < files.length; i++) {
+				Screen screen = new Screen(files[i]);
+				screens.put(screen.getScreenId(), screen);
+			}
 			io.sendConsole(io.translate("Spout.Screens.Loaded").replaceAll("%count%", String.valueOf(i)));
 		}
+	}
+	
+	public static HashMap<String, Screen> getScreens() {
+		return screens;
 	}
 }
